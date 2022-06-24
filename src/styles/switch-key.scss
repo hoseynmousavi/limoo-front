@@ -1,0 +1,42 @@
+.switch-key {
+  position: relative;
+  width: 50px;
+  height: 20px;
+  border-radius: var(--first-radius);
+  overflow: hidden;
+  transform: perspective(0);
+  background-color: var(--first-border-color);
+}
+
+.switch-toggle {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 16px;
+  width: 16px;
+  margin: 2px;
+  border-radius: 50%;
+  background-color: var(--solid-light);
+  box-shadow: var(--first-shadow);
+  display: block;
+  transition: left ease 0.2s;
+
+  &.off {
+    left: calc(100% - 20px);
+  }
+}
+
+.switch-color {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--first-color);
+  display: block;
+  transition: width ease 0.2s;
+
+  &.off {
+    width: 0;
+  }
+}

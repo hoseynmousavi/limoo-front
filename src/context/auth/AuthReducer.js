@@ -15,9 +15,9 @@ function reducer(state, action)
     {
         case SET_USER:
         {
-            const {user: userArg} = action.payload
-            const user = {...state, ...userArg}
-            saveUserToDisk(user)
+            const {data} = action.payload
+            const {refresh_token, token, user} = data
+            saveUserToDisk({refresh_token, token, user})
             return user
         }
         case LOGOUT:
@@ -32,21 +32,22 @@ function reducer(state, action)
     }
 }
 
-function saveUserToDisk(user)
+function saveUserToDisk(data)
 {
-    if (user)
+    if (data)
     {
-        if (user.token)
+        if (data.token)
         {
-            localStorage.setItem("token", user.token)
-            delete user.token
+            localStorage.setItem("token", data.token)
         }
-        if (user.refreshToken)
+        if (data.refresh_token)
         {
-            localStorage.setItem("refreshToken", user.refreshToken)
-            delete user.refreshToken
+            localStorage.setItem("refreshToken", data.refresh_token)
         }
-        localStorage.setItem("user", JSON.stringify(user))
+        if (data.user)
+        {
+            localStorage.setItem("user", JSON.stringify(data.user))
+        }
     }
     else
     {
@@ -69,7 +70,7 @@ function AuthProvider({children})
         {
             try
             {
-                AuthActions.setUser({user: JSON.parse(user), dispatch})
+                AuthActions.setUser({data: {user: JSON.parse(user)}, dispatch})
             }
             catch (e)
             {

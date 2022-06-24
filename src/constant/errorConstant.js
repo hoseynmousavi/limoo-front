@@ -1,7 +1,7 @@
 function errorConstant(error)
 {
     return (
-        error?.response?.data?.status
+        error?.response?.data?.message
         ||
         {
             "Network Error": "خطایی رخ داد، اتصال اینترنت خود را بررسی کنید.",

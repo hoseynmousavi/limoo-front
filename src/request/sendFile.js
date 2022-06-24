@@ -7,7 +7,7 @@ function sendFile({dontToast, url, data, progress})
     const token = localStorage.getItem("token")
     return axios(
         {
-            method: "put",
+            method: "patch",
             url: urlMaker({url}),
             headers: {"Authorization": token},
             onUploadProgress: p => progress && progress(Math.floor((p.loaded * 99) / p.total)),

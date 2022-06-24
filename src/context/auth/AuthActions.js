@@ -1,27 +1,51 @@
 import {SET_USER} from "./AuthTypes"
 import request from "../../request/request"
 import apiUrlsConstant from "../../constant/apiUrlsConstant"
+import sendFile from "../../request/sendFile"
 
 const sendOtp = ({mobile, cancel}) =>
 {
-    return request.post({url: apiUrlsConstant.sendOtp, data: {mobile}, cancel})
+    return request.post({url: apiUrlsConstant.getOtp, data: {phone: mobile}, cancel})
 }
 
 const loginOrSignup = ({mobile, code, dispatch}) =>
 {
-    return request.post({url: apiUrlsConstant.sendOtp, data: {mobile, code}})
-        .then(res =>
+    return request.post({url: apiUrlsConstant.verifyOtp, data: {phone: mobile, code}})
+        .then(({data}) =>
         {
-            setUser({user: res, dispatch})
+            const {is_sign_up} = data
+            setUser({data, dispatch})
+            return ({isSignUp: is_sign_up})
+        })
+}
+
+const editAvatar = ({avatar, dispatch, progress}) =>
+{
+    const data = new FormData()
+    if (avatar) data.append("avatar", avatar)
+    return sendFile({url: apiUrlsConstant.updateAvatar, data, progress})
+        .then(({data: user}) =>
+        {
+            setUser({data: {user}, dispatch})
+            return user.avatar
         })
 }
 
 const getUser = ({dispatch}) =>
 {
     request.get({url: apiUrlsConstant.getProfile, dontCache: true, dontToast: true})
-        .then(user =>
+        .then(({data: user}) =>
         {
-            setUser({user, dispatch})
+            setUser({data: {user}, dispatch})
+        })
+}
+
+const editProfile = ({data, dispatch}) =>
+{
+    return request.patch({url: apiUrlsConstant.updateProfile, data})
+        .then(({data: user}) =>
+        {
+            setUser({data: {user}, dispatch})
         })
 }
 
@@ -46,11 +70,11 @@ const checkEmail = ({email, cancel}) =>
     return request.post({url: apiUrlsConstant.checkEmail, data: {email}, cancel})
 }
 
-const setUser = ({user, dispatch}) =>
+const setUser = ({data, dispatch}) =>
 {
     dispatch({
         type: SET_USER,
-        payload: {user},
+        payload: {data},
     })
 }
 
@@ -67,6 +91,8 @@ const AuthActions = {
     setUser,
     getTokenWithRefreshToken,
     logout,
+    editProfile,
+    editAvatar,
 }
 
 export default AuthActions

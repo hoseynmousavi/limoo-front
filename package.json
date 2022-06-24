@@ -1,12 +1,13 @@
 {
-  "name": "my-template",
+  "name": "limoo-front",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "axios": "^0.27.2",
+    "browser-image-compression": "^2.0.0",
     "node-sass": "^7.0.1",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-scripts": "^5.0.1",
     "workbox-background-sync": "^6.5.3",
     "workbox-core": "^6.5.3",

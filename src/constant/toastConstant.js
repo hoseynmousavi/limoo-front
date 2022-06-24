@@ -7,6 +7,12 @@ const toastConstant = {
     unValidUrl: "آدرس وارد شده معتبر نیست",
     unValidPassword: "پسورد انتخابی باید حداقل ۶ کاراکتر باشد",
 
+    removeAvatarSuccess: "آواتار شما با موفقیت حذف شد.",
+    editAvatarSuccess: "آواتار شما با موفقیت بروز شد.",
+
+    editProfileSuccess: "حساب کاربری شما با موفقیت بروز شد.",
+    validationError: "لطفاً فیلدها را با اطلاعات صحیح پر کنید.",
+
     tokenExpired: "ورود شما منقضی شده است، دوباره وارد شوید.",
     requestCancel: "req_canceled",
     timerInSecond: 5,
