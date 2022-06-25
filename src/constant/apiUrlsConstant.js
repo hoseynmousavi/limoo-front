@@ -6,7 +6,7 @@ const apiUrlsConstant = {
     updateProfile: "user",
     updateAvatar: "user/avatar",
     checkEmail: "auth/get-user-by-email",
-    timer: "timer",
+    pack: "pack",
 }
 
 export default apiUrlsConstant

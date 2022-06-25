@@ -46,7 +46,7 @@ function ShowProfile()
                 <div className="edit-child-content about">
                     <EditChildContentItem title={textConstant.setting} link={urlConstant.setting} Icon={SettingSvg} notArrow isSetting/>
                     <EditChildContentItem title={textConstant.support} Icon={HeadphoneSvg} notArrow isSetting/>
-                    <EditChildContentItem title={`${textConstant.about}${process.env.REACT_APP_NAME}`} Icon={InfoSvg} iconColor notArrow isSetting/>
+                    <EditChildContentItem title={textConstant.about} Icon={InfoSvg} iconColor notArrow isSetting/>
                     <EditChildContentItem title={textConstant.logout} Icon={OffSvg} notArrow isSetting haveAlert isLast onClick={logout}/>
                 </div>
             </div>

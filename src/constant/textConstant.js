@@ -5,16 +5,15 @@ const textConstant = {
     enterPhone: "شماره موبایل خود را وارد کنید.",
 
     continueBtn: "ادامه",
+    submitBtn: "ثبت",
 
-    addTimer: "اضافه کردن تایمر",
-    addTimerDesc: "برای استفاده از امکانات اپلیکیشن\n برای دستگاه خود، تایمر بسازید",
+    addPack: "اضافه کردن بسته",
+    addPackDesc: "برای استفاده از امکانات لیمو\n برای شروع کار، بسته بسازید",
 
-    addTimerModalTitle: "افزودن تایمر",
-    addTimerChooseEgg: "پرنده خود را انتخاب کنید",
-    addTimerChooseEggTitle: "پرنده",
+    addPackName: "نام بسته",
+    addPackNamePlaceholder: "نام بسته خود را انتخاب کنید",
 
-
-    addTimerSubmit: "افزودن تایمر",
+    noCart: "هنوز کارتی اضافه نکرده‌اید",
 
     completeProfileAfterSignup: "حساب شما با موفقیت ساخته شد، اطلاعات خود را کامل کنید.",
     completeProfile: "تکمیل اطلاعات کاربری",
@@ -23,7 +22,7 @@ const textConstant = {
 
     setting: "تنظیمات",
     support: "پشتیبانی",
-    about: "درباره ",
+    about: "درباره ما",
     logout: "خروج از حساب",
 
     darkMode: "حالت شب",
@@ -51,6 +50,8 @@ const textConstant = {
     enterVerifyCode: "کد تاييد 5 رقمی که به شماره همراه ",
     enterVerifyCodeEnd: " ارسال شد را در زیر وارد کنید.",
     editPhone: "ویرایش شماره",
+
+    reviewCarts: "مرور کارت‌ها",
 }
 
 export default textConstant

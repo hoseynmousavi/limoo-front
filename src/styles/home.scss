@@ -1,0 +1,192 @@
+.home {
+  min-height: var(--full-height);
+  background-color: var(--second-background-color);
+  padding: 0 var(--mobile-first-solid-padding) calc(var(--nav-height) + min(env(safe-area-inset-bottom), 12px)) var(--mobile-first-solid-padding);
+}
+
+.home-navbar {
+  touch-action: none;
+  position: fixed;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  padding: 0 var(--mobile-first-solid-padding) calc(min(env(safe-area-inset-bottom), 12px)) var(--mobile-first-solid-padding);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: var(--header-z-index);
+  height: calc(var(--nav-height) + min(env(safe-area-inset-bottom), 12px));
+  border-radius: var(--second-radius) var(--second-radius) 0 0;
+  background-color: var(--first-background-color);
+  box-shadow: var(--first-shadow);
+}
+
+.home-navbar-profile-link {
+  width: calc(100% - 170px);
+  pointer-events: all;
+}
+
+.home-navbar-profile {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border-radius: var(--second-radius);
+  cursor: pointer;
+}
+
+.home-navbar-profile-img {
+  width: 45px;
+  height: 45px;
+}
+
+.home-navbar-profile-name {
+  font-size: var(--title-font);
+  font-family: my-font-bold, serif;
+  margin-right: 10px;
+  width: calc(100% - 45px - 10px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.home-navbar-btn {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  width: 160px;
+  padding: 0 20px;
+  border-radius: var(--first-radius);
+  height: 42px;
+  font-size: var(--title-font);
+  pointer-events: all;
+}
+
+.home-pack-item {
+  user-select: none;
+  border-radius: var(--first-radius);
+  overflow: hidden;
+  transform: perspective(0);
+  background-color: var(--first-background-color);
+  margin-bottom: var(--mobile-first-solid-padding);
+  box-shadow: var(--third-shadow);
+  text-align: center;
+}
+
+.home-pack-item-content {
+  width: 100%;
+  padding: var(--mobile-first-solid-padding);
+}
+
+.home-pack-item-title {
+  font-family: "my-font-bold", serif;
+  font-size: var(--title-font);
+}
+
+.home-pack-item-count {
+  margin-top: 8px;
+  font-size: var(--regular-font);
+}
+
+.home-add {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--mobile-first-solid-padding) 0;
+  height: 85px;
+  position: relative;
+}
+
+.home-add-logo {
+  font-size: var(--huge-font);
+  color: var(--first-color);
+  font-family: "my-font-bold", serif;
+}
+
+.home-add-items {
+  width: calc(100% - 90px);
+  overflow: auto;
+  direction: ltr;
+}
+
+.home-add-items-child {
+  direction: rtl;
+  white-space: nowrap;
+  margin-left: auto;
+  height: 50px;
+}
+
+.home-add-item-cont {
+  width: 50px;
+  min-width: 50px;
+  height: 50px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 8px;
+  cursor: pointer;
+  fill: var(--second-background-color);
+}
+
+.home-add-item {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.home-add-item-svg {
+  width: 100%;
+  height: 100%;
+  padding: 15%;
+  fill: var(--first-text-color);
+  background-color: var(--first-border-color);
+}
+
+.home-packs {
+  animation: fade-in ease 0.2s;
+}
+
+.home-packs-loading-404 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(var(--full-height) - 85px - var(--nav-height));
+}
+
+.home-detail-content {
+  cursor: pointer;
+  box-shadow: var(--first-shadow);
+  border-radius: var(--first-radius);
+  background-color: var(--first-background-color);
+  display: block;
+  width: 100%;
+  padding: 20px;
+  animation: fade-in ease 0.2s;
+}
+
+.home-detail-profile-add {
+  width: 65px;
+  height: 65px;
+  display: block;
+  margin: 5px auto;
+}
+
+.home-detail-profile-add-title {
+  font-family: my-font-bold, serif;
+  color: var(--first-text-color);
+  font-size: var(--large-font);
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.home-detail-profile-add-desc {
+  color: var(--second-text-color);
+  font-size: var(--small-font);
+  text-align: center;
+  margin-bottom: 15px;
+  white-space: pre-line;
+}
+
+.add-pack-button {
+  margin: calc(3 * var(--mobile-first-solid-padding)) 0 var(--mobile-first-solid-padding) 0;
+}

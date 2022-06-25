@@ -1,7 +1,3 @@
-import apiUrlsConstant from "./apiUrlsConstant"
-
-const offlineSending = [
-    apiUrlsConstant.logout,
-]
+const offlineSending = []
 
 export default offlineSending

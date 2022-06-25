@@ -1,0 +1,28 @@
+.slide-effect {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+}
+
+.slide-effect-content {
+  min-width: 100%;
+}
+
+.slide-effect-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &.remove {
+    background-color: var(--toast-fail-text);
+  }
+}
+
+.slide-effect-item-icon {
+  min-width: 20px;
+  height: 20px;
+
+  path {
+    fill: var(--solid-light);
+  }
+}
