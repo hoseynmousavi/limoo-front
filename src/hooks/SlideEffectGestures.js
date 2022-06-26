@@ -1,5 +1,6 @@
 import {useRef} from "react"
 import changeBodyOverflow from "../helpers/changeBodyOverflow"
+import {dontSwitchGesture} from "./SwitchGesture"
 
 function SlideEffectGestures({cartHeight})
 {
@@ -10,6 +11,7 @@ function SlideEffectGestures({cartHeight})
     let translateX = useRef(0)
     let deltaX = useRef(0)
     let deltaY = useRef(0)
+    let contRef = useRef(null)
     let removeRef = useRef(null)
     const maxTranslate = 0
     const minTranslate = -cartHeight
@@ -32,7 +34,14 @@ function SlideEffectGestures({cartHeight})
         deltaX.current = posX.current - (e.touches?.[0].clientX || e.clientX)
         deltaY.current = posY.current - (e.touches?.[0].clientY || e.clientY)
 
-        if (changing.current || (started.current && deltaY.current < 5 && deltaY.current > -5))
+        if (
+            changing.current ||
+            (
+                started.current &&
+                ((deltaX.current > 0) || (translateX.current === minTranslate)) &&
+                deltaY.current < 5 && deltaY.current > -5
+            )
+        )
         {
             changeBodyOverflow(true)
             changing.current = true
@@ -77,6 +86,7 @@ function SlideEffectGestures({cartHeight})
                 removeRef.current.style.marginRight = `0px`
                 setTimeout(() =>
                 {
+                    contRef.current.classList.add(dontSwitchGesture)
                     removeRef.current.style.transition = "initial"
                     changeBodyOverflow(false)
                 }, time + 10)
@@ -91,6 +101,7 @@ function SlideEffectGestures({cartHeight})
                 removeRef.current.style.marginRight = `${minTranslate}px`
                 setTimeout(() =>
                 {
+                    contRef.current.classList.remove(dontSwitchGesture)
                     removeRef.current.style.transition = "initial"
                     changeBodyOverflow(false)
                 }, time + 10)
@@ -113,6 +124,7 @@ function SlideEffectGestures({cartHeight})
         onTouchMove,
         onTouchEnd,
         removeRef,
+        contRef,
     }
 }
 
