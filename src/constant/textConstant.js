@@ -35,6 +35,7 @@ const textConstant = {
     settingNotification: "مدیریت اعلانات",
     settingNotificationDesc: "همه اعلانات",
 
+    daily_goal: "هدف روزانه",
     firstName: "نام",
     lastName: "نام خانوادگی",
     chooseGender: "جنسیت خود را انتخاب کنید",

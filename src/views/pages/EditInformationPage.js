@@ -27,9 +27,10 @@ function EditInformationPage({route: {location: {pathname}}})
     const [isLoading, setIsLoading] = useState(false)
     const isAfterSignUp = pathname === urlConstant.editInformationAfterSignup
 
-    const {first_name, last_name, email, birth_date, gender} = values
+    const {daily_goal, first_name, last_name, email, birth_date, gender} = values
     let data = {}
 
+    if (daily_goal && daily_goal !== user.daily_goal) data.daily_goal = daily_goal
     if ((first_name || first_name === "") && first_name !== (user.first_name || null)) data.first_name = first_name || null
     if ((last_name || last_name === "") && last_name !== (user.last_name || null)) data.last_name = last_name || null
     if ((email || email === "") && email !== (user.email || null)) data.email = email || null
@@ -96,6 +97,18 @@ function EditInformationPage({route: {location: {pathname}}})
                                 label={textConstant.editAvatar}
                     />
                 }
+                <Input name="daily_goal"
+                       label={textConstant.daily_goal}
+                       placeholder={textConstant.daily_goal}
+                       defaultValue={user.daily_goal || ""}
+                       onChange={changeField}
+                       focusOnMountDesktop
+                       disableSubmit={validationError}
+                       onSubmit={saveInformation}
+                       onSubmitDisable={onDisableSaveClick}
+                       disabled={isLoading}
+                       required
+                />
                 <Input name="first_name"
                        label={textConstant.firstName}
                        placeholder={textConstant.firstName}

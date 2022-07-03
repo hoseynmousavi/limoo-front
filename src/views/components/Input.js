@@ -50,7 +50,7 @@ function Input({
                     if (value.length >= 6) setValue(value)
                 }
             }
-            else setValue(defaultValue.trim())
+            else setValue(defaultValue.toString().trim())
         }
 
         return () =>
