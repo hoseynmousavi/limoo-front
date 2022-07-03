@@ -18,10 +18,12 @@ import goBack from "../../helpers/goBack"
 import textConstant from "../../constant/textConstant"
 import GetTheme from "../../hooks/GetTheme"
 import parseQueryString from "../../helpers/parseQueryString"
+import {CartContext} from "../../context/cart/CartReducer"
 
 function EditInformationPage({route: {location: {pathname}}})
 {
     const {isDark} = GetTheme()
+    const {dispatch: cartDispatch} = useContext(CartContext)
     const {state: user, dispatch} = useContext(AuthContext)
     const [values, setValues] = useState({})
     const [isLoading, setIsLoading] = useState(false)
@@ -57,7 +59,7 @@ function EditInformationPage({route: {location: {pathname}}})
             if (Object.values(data).length > 0)
             {
                 setIsLoading(true)
-                AuthActions.editProfile({data, dispatch})
+                AuthActions.editProfile({data, dispatch, cartDispatch})
                     .then(() =>
                     {
                         if (isAfterSignUp) goToHome()

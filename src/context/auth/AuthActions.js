@@ -2,6 +2,7 @@ import {SET_USER} from "./AuthTypes"
 import request from "../../request/request"
 import apiUrlsConstant from "../../constant/apiUrlsConstant"
 import sendFile from "../../request/sendFile"
+import cartActions from "../cart/CartActions"
 
 const sendOtp = ({mobile, cancel}) =>
 {
@@ -40,12 +41,13 @@ const getUser = ({dispatch}) =>
         })
 }
 
-const editProfile = ({data, dispatch}) =>
+const editProfile = ({data, dispatch, cartDispatch}) =>
 {
     return request.patch({url: apiUrlsConstant.updateProfile, data})
         .then(({data: user}) =>
         {
             setUser({data: {user}, dispatch})
+            if (data.daily_goal) cartActions.getReviewCarts({dispatch: cartDispatch})
         })
 }
 
