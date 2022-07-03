@@ -15,7 +15,7 @@
 
   &.done {
     animation: cart-out var(--transition-method) 0.5s;
-    transform: rotate(35deg) translate3d(200%, 50%, 0);
+    transform: rotate(35deg) translate3d(200%, 50%, 0) !important;
   }
 }
 
@@ -65,7 +65,7 @@
   left: 0;
   right: 0;
   display: flex;
-  animation: fade-in ease 0.3s;
+  animation: fade-in-long ease 0.6s;
 }
 
 .review-cart-feedback-item {
