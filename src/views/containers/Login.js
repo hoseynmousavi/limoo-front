@@ -1,8 +1,8 @@
 import Switch from "../components/Switch"
-import LoginInputPhone from "../containers/LoginInputPhone"
-import LoginInputCode from "../containers/LoginInputCode"
-import urlConstant from "../../constant/urlConstant"
 import Route from "../components/Route"
+import urlConstant from "../../constant/urlConstant"
+import LoginInputPhone from "./login/LoginInputPhone"
+import LoginInputCode from "./login/LoginInputCode"
 
 function Login()
 {

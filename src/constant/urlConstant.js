@@ -1,5 +1,5 @@
 const urlConstant = {
-    home: "/",
+    home: "*",
 
     login: "/login",
     loginVerifyCode: parameter => `/login/enter-code/${parameter}`,
@@ -8,6 +8,8 @@ const urlConstant = {
     editInformation: "/edit",
     setting: `/setting`,
     editInformationAfterSignup: "/edit/after-signup",
+
+    reviewCarts: "/review-carts",
 }
 
 export default urlConstant

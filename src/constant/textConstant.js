@@ -13,6 +13,7 @@ const textConstant = {
     addPackName: "نام بسته",
     addPackNamePlaceholder: "نام بسته خود را انتخاب کنید",
 
+    haveCart: cartsCount => `${cartsCount} کارت`,
     noCart: "هنوز کارتی اضافه نکرده‌اید",
 
     completeProfileAfterSignup: "حساب شما با موفقیت ساخته شد، اطلاعات خود را کامل کنید.",
@@ -51,7 +52,10 @@ const textConstant = {
     enterVerifyCodeEnd: " ارسال شد را در زیر وارد کنید.",
     editPhone: "ویرایش شماره",
 
-    reviewCarts: "مرور کارت‌ها",
+    reviewCarts: length => `مرور کارت‌ها (${length})`,
+    noCartReview: "فعلا هیچ!",
+
+    reviewDone:"همه کارت‌های امروز رو مرور کردی! خسته نباشی!"
 }
 
 export default textConstant

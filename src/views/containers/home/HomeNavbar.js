@@ -7,10 +7,13 @@ import getUserFixName from "../../../helpers/getUserFixName"
 import urlConstant from "../../../constant/urlConstant"
 import UserAvatar from "../../components/UserAvatar"
 import {AuthContext} from "../../../context/auth/AuthReducer"
+import GetReviewCarts from "../../../hooks/GetReviewCarts"
 
 function HomeNavbar()
 {
     const {state: user} = useContext(AuthContext)
+    const {isLoading, list} = GetReviewCarts()
+    const allCartsLength = list.length
     return (
         <div className="home-navbar">
             <Link to={urlConstant.showProfile} className="home-navbar-profile-link">
@@ -21,9 +24,16 @@ function HomeNavbar()
                     </div>
                 </Material>
             </Link>
-            <Button className="home-navbar-btn" type="first">
-                {textConstant.reviewCarts}
-            </Button>
+            <Link to={allCartsLength ? urlConstant.reviewCarts : null}>
+                <Button loading={isLoading} className="home-navbar-btn" type="first">
+                    {
+                        allCartsLength > 0 ?
+                            textConstant.reviewCarts(allCartsLength)
+                            :
+                            textConstant.noCartReview
+                    }
+                </Button>
+            </Link>
         </div>
     )
 }

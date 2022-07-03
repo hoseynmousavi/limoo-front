@@ -61,6 +61,7 @@ sed -i "s~TITLE_FONT~$REACT_APP_TITLE_FONT~g" build/index.html
 sed -i "s~LARGE_FONT~$REACT_APP_LARGE_FONT~g" build/index.html
 sed -i "s~BIG_FONT~$REACT_APP_BIG_FONT~g" build/index.html
 sed -i "s~HUGE_FONT~$REACT_APP_HUGE_FONT~g" build/index.html
+sed -i "s~CART_FONT~$REACT_APP_CART_FONT~g" build/index.html
 sed -i "s~SOLID_LIGHT~$REACT_APP_SOLID_LIGHT~g" build/index.html
 sed -i "s~SOLID_DARK~$REACT_APP_SOLID_DARK~g" build/index.html
 echo "VARIABLES SET SUCCESSFULLY"

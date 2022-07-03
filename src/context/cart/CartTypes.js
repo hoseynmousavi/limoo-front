@@ -1,0 +1,2 @@
+export const GET_REVIEW_CARTS = "GET_REVIEW_CARTS"
+export const REVIEW_CART = "REVIEW_CART"

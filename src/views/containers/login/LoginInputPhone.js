@@ -1,11 +1,11 @@
-import LogoSvg from "../../media/svg/LogoSvg"
-import PhoneInput from "../components/PhoneInput"
+import LogoSvg from "../../../media/svg/LogoSvg"
+import PhoneInput from "../../components/PhoneInput"
 import {useState} from "react"
-import urlConstant from "../../constant/urlConstant"
-import OnKeyDown from "../../hooks/OnKeyDown"
-import Button from "../components/Button"
-import textConstant from "../../constant/textConstant"
-import parseQueryString from "../../helpers/parseQueryString"
+import urlConstant from "../../../constant/urlConstant"
+import OnKeyDown from "../../../hooks/OnKeyDown"
+import Button from "../../components/Button"
+import textConstant from "../../../constant/textConstant"
+import parseQueryString from "../../../helpers/parseQueryString"
 
 function LoginInputPhone()
 {

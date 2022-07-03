@@ -16,7 +16,7 @@ import showPhoneNumber from "../../helpers/showPhoneNumber"
 import textConstant from "../../constant/textConstant"
 import GetTheme from "../../hooks/GetTheme"
 
-function ShowProfile()
+function ShowProfilePage()
 {
     const {isDark} = GetTheme()
     const {state: user} = useContext(AuthContext)
@@ -54,4 +54,4 @@ function ShowProfile()
     )
 }
 
-export default ShowProfile
+export default ShowProfilePage

@@ -12,7 +12,7 @@ function GetPacks()
 
     useEffect(() =>
     {
-        PackActions.getPacks({dispatch, cancel: cancelSource => request.current = cancelSource})
+        if (isLoading) PackActions.getPacks({dispatch, cancel: cancelSource => request.current = cancelSource})
         return () => request?.current?.cancel?.(toastConstant.requestCancel)
         // eslint-disable-next-line
     }, [])

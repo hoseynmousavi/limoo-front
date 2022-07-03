@@ -19,7 +19,7 @@ import textConstant from "../../constant/textConstant"
 import GetTheme from "../../hooks/GetTheme"
 import parseQueryString from "../../helpers/parseQueryString"
 
-function EditInformation({route: {location: {pathname}}})
+function EditInformationPage({route: {location: {pathname}}})
 {
     const {isDark} = GetTheme()
     const {state: user, dispatch} = useContext(AuthContext)
@@ -172,4 +172,4 @@ function EditInformation({route: {location: {pathname}}})
     )
 }
 
-export default EditInformation
+export default EditInformationPage

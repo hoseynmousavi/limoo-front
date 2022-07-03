@@ -7,7 +7,7 @@ import {PackContext} from "../../../context/pack/PackReducer"
 import toastManager from "../../../helpers/toastManager"
 import {INFO_TOAST} from "../../../constant/toastTypes"
 
-function HomePackItem({data: {_id, name}})
+function HomePackItem({data: {_id, name, carts_count}})
 {
     const {dispatch} = useContext(PackContext)
 
@@ -24,7 +24,14 @@ function HomePackItem({data: {_id, name}})
         <SlideEffect className="home-pack-item" onRemove={remove}>
             <Material className="home-pack-item-content">
                 <div className="home-pack-item-title">{name}</div>
-                <div className="home-pack-item-count">{textConstant.noCart}</div>
+                <div className="home-pack-item-count">
+                    {
+                        carts_count > 0 ?
+                            textConstant.haveCart(carts_count)
+                            :
+                            textConstant.noCart
+                    }
+                </div>
             </Material>
         </SlideEffect>
     )

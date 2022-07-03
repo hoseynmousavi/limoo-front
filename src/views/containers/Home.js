@@ -4,8 +4,9 @@ import Route from "../components/Route"
 import urlConstant from "../../constant/urlConstant"
 
 const SettingPage = lazy(() => import("../pages/SettingPage"))
-const ShowProfile = lazy(() => import("../pages/ShowProfile"))
-const EditInformation = lazy(() => import("../pages/EditInformation"))
+const ShowProfilePage = lazy(() => import("../pages/ShowProfilePage"))
+const EditInformationPage = lazy(() => import("../pages/EditInformationPage"))
+const ReviewCartsPage = lazy(() => import("../pages/ReviewCartsPage"))
 const HomePage = lazy(() => import("../pages/HomePage"))
 
 function Home()
@@ -13,8 +14,9 @@ function Home()
     return (
         <Switch>
             <Route path={urlConstant.setting} render={() => <SettingPage/>}/>
-            <Route path={urlConstant.showProfile} render={() => <ShowProfile/>}/>
-            <Route path={urlConstant.editInformation} render={route => <EditInformation route={route}/>}/>
+            <Route path={urlConstant.showProfile} render={() => <ShowProfilePage/>}/>
+            <Route path={urlConstant.editInformation} render={route => <EditInformationPage route={route}/>}/>
+            <Route path={urlConstant.reviewCarts} render={() => <ReviewCartsPage/>}/>
             <Route exact path={urlConstant.home} render={() => <HomePage/>}/>
         </Switch>
     )
