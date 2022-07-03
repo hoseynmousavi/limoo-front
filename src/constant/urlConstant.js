@@ -1,5 +1,5 @@
 const urlConstant = {
-    home: "*",
+    home: "/",
 
     login: "/login",
     loginVerifyCode: parameter => `/login/enter-code/${parameter}`,
