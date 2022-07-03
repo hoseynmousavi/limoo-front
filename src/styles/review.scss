@@ -40,6 +40,7 @@
   border-radius: var(--second-radius);
   box-shadow: var(--first-shadow);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
@@ -47,10 +48,15 @@
 .review-cart-material-title {
   font-family: "my-font-bold", serif;
   font-size: var(--cart-font);
+  padding: 0 var(--mobile-first-solid-padding);
+  text-align: center;
 }
 
 .review-cart-material-desc {
   font-size: var(--title-font);
+  padding: 0 var(--mobile-first-solid-padding);
+  white-space: pre-line;
+  text-align: center;
 }
 
 .review-cart-feedback {
@@ -70,4 +76,5 @@
   align-items: center;
   justify-content: center;
   font-family: initial;
+  font-size: var(--cart-font);
 }
