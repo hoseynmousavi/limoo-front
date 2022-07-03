@@ -116,7 +116,6 @@ function EditInformationPage({route: {location: {pathname}}})
                        placeholder={textConstant.firstName}
                        defaultValue={user.first_name || ""}
                        onChange={changeField}
-                       focusOnMountDesktop
                        disableSubmit={validationError}
                        onSubmit={saveInformation}
                        onSubmitDisable={onDisableSaveClick}

@@ -46,6 +46,8 @@ function AddPackModal({close})
                    label={textConstant.addPackName}
                    placeholder={textConstant.addPackNamePlaceholder}
                    noSpace
+                   onSubmit={submit}
+                   disableSubmit={isDisable}
             />
             <Button loading={isLoading} disable={isDisable} className="add-pack-button" onClick={submit}>
                 {textConstant.submitBtn}
