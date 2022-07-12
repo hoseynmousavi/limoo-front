@@ -45,6 +45,23 @@
   justify-content: center;
 }
 
+.review-cart-material-index {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: var(--mobile-first-solid-padding);
+  font-family: "my-font-bold", serif;
+  font-size: var(--large-font);
+}
+
+.review-cart-material-hint {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: var(--mobile-first-solid-padding);
+  font-family: "my-font-bold", serif;
+}
+
 .review-cart-material-title {
   font-family: "my-font-bold", serif;
   font-size: var(--cart-font);
@@ -70,6 +87,7 @@
 }
 
 .review-cart-feedback-item {
+  transform: none !important;
   height: 80px;
   flex-grow: 1;
   width: 50%;

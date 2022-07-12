@@ -3,7 +3,7 @@ import {useContext, useRef, useState} from "react"
 import cartActions from "../../../context/cart/CartActions"
 import {CartContext} from "../../../context/cart/CartReducer"
 
-function ReviewCartItem({cart: {_id: cart_id, front, back, back_description}, next})
+function ReviewCartItem({cart: {_id: cart_id, last_review_date, index, front, back, back_description}, next})
 {
     const {dispatch} = useContext(CartContext)
     const [isDone, setIsDone] = useState(false)
@@ -33,11 +33,15 @@ function ReviewCartItem({cart: {_id: cart_id, front, back, back_description}, ne
         }
     }
 
-
     return (
         <div ref={contRef} className={`review-cart ${isDone ? "done" : ""}`}>
             <Material isDiv disable={!isFront} className="review-cart-material" onClick={onCartClick}>
+
+                <div className="review-cart-material-index">{index}</div>
+                {index === 1 && last_review_date === undefined && <div className="review-cart-material-hint">کارت جدید</div>}
+
                 <div className="review-cart-material-title">{isFront ? front : back}</div>
+
                 {
                     !isFront &&
                     <>
