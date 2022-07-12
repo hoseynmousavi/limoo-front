@@ -47,19 +47,18 @@
 
 .review-cart-material-index {
   position: absolute;
-  top: 0;
-  left: 0;
-  margin: var(--mobile-first-solid-padding);
+  top: calc(1.5 * var(--mobile-first-solid-padding));
+  left: calc(1.5 * var(--mobile-first-solid-padding));
   font-family: "my-font-bold", serif;
   font-size: var(--large-font);
 }
 
 .review-cart-material-hint {
   position: absolute;
-  top: 0;
-  right: 0;
-  margin: var(--mobile-first-solid-padding);
+  top: calc(1.5 * var(--mobile-first-solid-padding));
+  right: calc(1.5 * var(--mobile-first-solid-padding));
   font-family: "my-font-bold", serif;
+  font-size: var(--large-font);
 }
 
 .review-cart-material-title {
