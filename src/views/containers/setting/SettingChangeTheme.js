@@ -1,7 +1,7 @@
 import EditChildContentItem from "../../components/EditChildContentItem"
 import textConstant from "../../../constant/textConstant"
 import MoonSvg from "../../../media/svg/MoonSvg"
-import GetTheme from "../../../hooks/GetTheme"
+import GetTheme from "../../../seyed-modules/hooks/GetTheme"
 import {useEffect, useRef} from "react"
 
 function SettingChangeTheme({contRef})

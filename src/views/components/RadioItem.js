@@ -1,6 +1,6 @@
 import RadioBtnFillSvg from "../../media/svg/RadioBtnFillSvg"
 import RadioBtnSvg from "../../media/svg/RadioBtnSvg"
-import Material from "./Material"
+import Material from "../../seyed-modules/components/Material"
 
 function RadioItem({onClick, name, isActive, isRtl, rtlExtraContent})
 {

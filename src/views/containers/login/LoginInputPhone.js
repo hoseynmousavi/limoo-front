@@ -2,10 +2,10 @@ import LogoSvg from "../../../media/svg/LogoSvg"
 import PhoneInput from "../../components/PhoneInput"
 import {useState} from "react"
 import urlConstant from "../../../constant/urlConstant"
-import OnKeyDown from "../../../hooks/OnKeyDown"
-import Button from "../../components/Button"
+import OnKeyDown from "../../../seyed-modules/hooks/OnKeyDown"
+import Button from "../../../seyed-modules/components/Button"
 import textConstant from "../../../constant/textConstant"
-import parseQueryString from "../../../helpers/parseQueryString"
+import parseQueryString from "../../../seyed-modules/helpers/parseQueryString"
 
 function LoginInputPhone()
 {

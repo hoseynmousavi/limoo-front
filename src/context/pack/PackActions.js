@@ -1,10 +1,12 @@
-import request from "../../request/request"
+import request from "../../seyed-modules/request/request"
 import apiUrlsConstant from "../../constant/apiUrlsConstant"
 import {ADD_PACK, GET_PACK, REMOVE_PACK} from "./PackTypes"
 
+const base = process.env.REACT_APP_REST_URL
+
 function getPacks({dispatch, cancel})
 {
-    request.get({url: apiUrlsConstant.pack, cancel})
+    request.get({base, url: apiUrlsConstant.pack, cancel})
         .then(({data}) =>
         {
             dispatch({
@@ -16,7 +18,7 @@ function getPacks({dispatch, cancel})
 
 function addPack({dispatch, data})
 {
-    return request.post({url: apiUrlsConstant.pack, data})
+    return request.post({base, url: apiUrlsConstant.pack, data})
         .then(res =>
         {
             const {data, message} = res
@@ -30,7 +32,7 @@ function addPack({dispatch, data})
 
 function deletePack({dispatch, packId})
 {
-    return request.del({url: apiUrlsConstant.pack, data: {pack_id: packId}})
+    return request.del({base, url: apiUrlsConstant.pack, data: {pack_id: packId}})
         .then(res =>
         {
             const {message} = res

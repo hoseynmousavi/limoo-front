@@ -1,6 +1,6 @@
 import {useLayoutEffect, useRef, useState} from "react"
 import verifyCodeConstant from "../../constant/verifyCodeConstant"
-import numberCorrection from "../../helpers/numberCorrection"
+import numberCorrection from "../../seyed-modules/helpers/numberCorrection"
 
 function CodeInput({onChange, disable, error})
 {

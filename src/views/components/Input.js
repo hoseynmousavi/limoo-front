@@ -1,13 +1,14 @@
 import {useEffect, useRef, useState} from "react"
 import regexConstant from "../../constant/regexConstant"
 import checkNationalCode from "../../helpers/checkNationalCode"
-import numberCorrection from "../../helpers/numberCorrection"
+import numberCorrection from "../../seyed-modules/helpers/numberCorrection"
 import inputKeyDownEnter from "../../helpers/inputKeyDownEnter"
 import AuthActions from "../../context/auth/AuthActions"
-import toastConstant from "../../constant/toastConstant"
-import MyLoader from "./MyLoader"
-import CheckSvg from "../../media/svg/CheckSvg"
-import CloseSvg from "../../media/svg/CloseSvg"
+import MyLoader from "../../seyed-modules/components/MyLoader"
+import CheckSvg from "../../seyed-modules/media/svg/CheckSvg"
+import CloseSvg from "../../seyed-modules/media/svg/CloseSvg"
+import inputConstant from "../../constant/inputConstant"
+import {REQUEST_CANCEL} from "../../seyed-modules/constant/toastTypes"
 
 function Input({
                    className, name, autoComplete = "on", focusOnMountDesktop, label, type = "text", validation, placeholder = "", checkExist = true,
@@ -79,7 +80,7 @@ function Input({
                         if (checkExist)
                         {
                             onChange({name, value: value || required ? null : ""})
-                            if (validationCancel?.current?.cancel) validationCancel.current.cancel(toastConstant.requestCancel)
+                            if (validationCancel?.current?.cancel) validationCancel.current.cancel(REQUEST_CANCEL)
                             validationTimer.current = setTimeout(() =>
                             {
                                 setValidationLoading("loading")
@@ -87,7 +88,7 @@ function Input({
                                     .then(() =>
                                     {
                                         setValidationLoading("NOK")
-                                        setError(toastConstant.repeatedEmail)
+                                        setError(inputConstant.repeatedEmail)
                                     })
                                     .catch(err =>
                                     {
@@ -166,7 +167,7 @@ function Input({
         let tempErr = ""
         if (!tempValue)
         {
-            if (required) tempErr = toastConstant.requiredField
+            if (required) tempErr = inputConstant.requiredField
         }
         else
         {
@@ -174,23 +175,23 @@ function Input({
             {
                 if (validation === "email")
                 {
-                    if (!regexConstant.EMAIL_REGEX.test(tempValue)) tempErr = toastConstant.unValidEmail
+                    if (!regexConstant.EMAIL_REGEX.test(tempValue)) tempErr = inputConstant.unValidEmail
                 }
                 else if (validation === "national_code")
                 {
-                    if (!checkNationalCode(tempValue)) tempErr = toastConstant.unValidNationalCode
+                    if (!checkNationalCode(tempValue)) tempErr = inputConstant.unValidNationalCode
                 }
                 else if (validation === "phone")
                 {
-                    if (!regexConstant.PHONE_REGEX.test(tempValue)) tempErr = toastConstant.unValidPhone
+                    if (!regexConstant.PHONE_REGEX.test(tempValue)) tempErr = inputConstant.unValidPhone
                 }
                 else if (validation === "url")
                 {
-                    if (!regexConstant.URL_REGEX.test(tempValue)) tempErr = toastConstant.unValidUrl
+                    if (!regexConstant.URL_REGEX.test(tempValue)) tempErr = inputConstant.unValidUrl
                 }
                 else if (validation === "password")
                 {
-                    if (tempValue.length < 6) tempErr = toastConstant.unValidPassword
+                    if (tempValue.length < 6) tempErr = inputConstant.unValidPassword
                 }
             }
         }

@@ -1,5 +1,5 @@
 import {createContext, useEffect, useReducer} from "react"
-import logoutManager from "../../helpers/logoutManager"
+import logoutManager from "../../seyed-modules/helpers/logoutManager"
 import {LOGOUT} from "../auth/AuthTypes"
 import {GET_REVIEW_CARTS, REVIEW_CART} from "./CartTypes"
 

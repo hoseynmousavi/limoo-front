@@ -1,4 +1,4 @@
-import numberCorrection from "./numberCorrection"
+import numberCorrection from "../seyed-modules/helpers/numberCorrection"
 import verifyCodeConstant from "../constant/verifyCodeConstant"
 
 function showPhoneNumber(phone)

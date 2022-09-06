@@ -1,10 +1,10 @@
 import GetReviewCarts from "../../hooks/GetReviewCarts"
 import {useState} from "react"
 import ReviewCartItem from "../containers/review/ReviewCartItem"
-import MyLoader from "../components/MyLoader"
+import MyLoader from "../../seyed-modules/components/MyLoader"
 import textConstant from "../../constant/textConstant"
-import Button from "../components/Button"
-import goBack from "../../helpers/goBack"
+import Button from "../../seyed-modules/components/Button"
+import goBack from "../../seyed-modules/helpers/goBack"
 
 function ReviewCartsPage()
 {

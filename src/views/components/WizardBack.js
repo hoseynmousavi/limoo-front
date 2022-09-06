@@ -1,12 +1,12 @@
 import BackSvg from "../../media/svg/BackSvg"
-import Material from "./Material"
-import goBack from "../../helpers/goBack"
-import ScrollY from "../../hooks/ScrollY"
+import Material from "../../seyed-modules/components/Material"
+import goBack from "../../seyed-modules/helpers/goBack"
+import ScrollY from "../../seyed-modules/hooks/ScrollY"
 import {useRef, useState} from "react"
 import TextOverflow from "./TextOverflow"
 import textConstant from "../../constant/textConstant"
-import Link from "./Link"
-import GetTheme from "../../hooks/GetTheme"
+import Link from "../../seyed-modules/components/Link"
+import GetTheme from "../../seyed-modules/hooks/GetTheme"
 
 function WizardBack({secondPadding, title, headerTile, desc, dontFix, link})
 {

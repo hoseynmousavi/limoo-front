@@ -1,6 +1,6 @@
 import {useRef} from "react"
 import CheckIsPinned from "../../hooks/CheckIsPinned"
-import GetTheme from "../../hooks/GetTheme"
+import GetTheme from "../../seyed-modules/hooks/GetTheme"
 
 function BtnBottomFullScreen({className, children})
 {

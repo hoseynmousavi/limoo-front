@@ -1,5 +1,5 @@
 import {useLayoutEffect, useRef, useState} from "react"
-import createMaterialColor from "../../helpers/createMaterialColor"
+import createMaterialColor from "../../seyed-modules/helpers/createMaterialColor"
 
 function TextOverflow({className, children, infinite})
 {

@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react"
 import verifyCodeConstant from "../../constant/verifyCodeConstant"
-import Material from "./Material"
+import Material from "../../seyed-modules/components/Material"
 
 function TimerCode({onEndRetry, disable})
 {

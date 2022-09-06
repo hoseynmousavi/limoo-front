@@ -6,15 +6,15 @@ import EditChildContentItem from "../components/EditChildContentItem"
 import urlConstant from "../../constant/urlConstant"
 import IconBtn from "../components/IconBtn"
 import HeadphoneSvg from "../../media/svg/HeadphoneSvg"
-import InfoSvg from "../../media/svg/InfoSvg"
+import InfoSvg from "../../seyed-modules/media/svg/InfoSvg"
 import getUserFixName from "../../helpers/getUserFixName"
 import EditSvg from "../../media/svg/EditSvg"
 import SettingSvg from "../../media/svg/SettingSvg"
 import OffSvg from "../../media/svg/OffSvg"
-import logoutManager from "../../helpers/logoutManager"
+import logoutManager from "../../seyed-modules/helpers/logoutManager"
 import showPhoneNumber from "../../helpers/showPhoneNumber"
 import textConstant from "../../constant/textConstant"
-import GetTheme from "../../hooks/GetTheme"
+import GetTheme from "../../seyed-modules/hooks/GetTheme"
 
 function ShowProfilePage()
 {

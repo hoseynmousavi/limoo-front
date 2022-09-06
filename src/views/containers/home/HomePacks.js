@@ -1,6 +1,6 @@
 import HomePackItem from "../../components/home/HomePackItem"
 import GetPacks from "../../../hooks/GetPacks"
-import MyLoader from "../../components/MyLoader"
+import MyLoader from "../../../seyed-modules/components/MyLoader"
 import HomeNoPackFound from "./HomeNoPackFound"
 
 function HomePacks()

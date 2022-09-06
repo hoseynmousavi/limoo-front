@@ -1,8 +1,8 @@
 import KeyboardArrowSvg from "../../media/svg/KeyboardArrowSvg"
-import Material from "./Material"
-import Link from "./Link"
-import MyLoader from "./MyLoader"
-import createMaterialColor from "../../helpers/createMaterialColor"
+import Material from "../../seyed-modules/components/Material"
+import Link from "../../seyed-modules/components/Link"
+import MyLoader from "../../seyed-modules/components/MyLoader"
+import createMaterialColor from "../../seyed-modules/helpers/createMaterialColor"
 import SwitchKey from "./SwitchKey"
 
 function EditChildContentItem({title, desc, Icon, link, isLast, isLoading, notArrow, isSetting, haveAlert, iconColor, onClick, haveSwitch, switchOn})

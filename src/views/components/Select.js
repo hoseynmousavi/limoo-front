@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react"
-import Material from "./Material"
+import Material from "../../seyed-modules/components/Material"
 import KeyboardArrowSvg from "../../media/svg/KeyboardArrowSvg"
-import goBack from "../../helpers/goBack"
+import goBack from "../../seyed-modules/helpers/goBack"
 import RadioItem from "./RadioItem"
 import VerticalPanel from "./VerticalPanel"
 

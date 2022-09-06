@@ -1,4 +1,4 @@
-import Material from "../../components/Material"
+import Material from "../../../seyed-modules/components/Material"
 import AddChildSvg from "../../../media/svg/AddChildSvg"
 import textConstant from "../../../constant/textConstant"
 import {useState} from "react"

@@ -1,12 +1,12 @@
 import {useLayoutEffect, useRef} from "react"
-import popOnPopState from "../../helpers/popOnPopState"
-import goBack from "../../helpers/goBack"
-import checkParentClass from "../../helpers/checkParentClass"
-import changeBodyOverflow from "../../helpers/changeBodyOverflow"
-import onResize from "../../helpers/onResize"
-import GetTheme from "../../hooks/GetTheme"
+import popOnPopState from "../../seyed-modules/helpers/popOnPopState"
+import goBack from "../../seyed-modules/helpers/goBack"
+import checkParentClass from "../../seyed-modules/helpers/checkParentClass"
+import changeBodyOverflow from "../../seyed-modules/helpers/changeBodyOverflow"
+import onResize from "../../seyed-modules/helpers/onResize"
+import GetTheme from "../../seyed-modules/hooks/GetTheme"
 import {createPortal} from "react-dom"
-import {dontSwitchGesture} from "../../hooks/SwitchGesture"
+import {dontSwitchGesture} from "../../seyed-modules/hooks/SwitchGesture"
 
 function VerticalPanel({children, className, contentClassName, style, close, statusBarColor, dontPush})
 {

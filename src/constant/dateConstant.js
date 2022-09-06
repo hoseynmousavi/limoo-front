@@ -1,4 +1,4 @@
-import numberCorrection from "../helpers/numberCorrection"
+import numberCorrection from "../seyed-modules/helpers/numberCorrection"
 
 const dateConstant = {
     months: ["فروردین", "اردیبهشت", "خرداد", "تیر", "مرداد", "شهریور", "مهر", "آبان", "آذر", "دی", "بهمن", "اسفند"],

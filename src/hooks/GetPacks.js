@@ -1,7 +1,7 @@
 import {useContext, useEffect, useRef} from "react"
-import toastConstant from "../constant/toastConstant"
 import PackActions from "../context/pack/PackActions"
 import {PackContext} from "../context/pack/PackReducer"
+import {REQUEST_CANCEL} from "../seyed-modules/constant/toastTypes"
 
 function GetPacks()
 {
@@ -13,7 +13,7 @@ function GetPacks()
     useEffect(() =>
     {
         if (isLoading) PackActions.getPacks({dispatch, cancel: cancelSource => request.current = cancelSource})
-        return () => request?.current?.cancel?.(toastConstant.requestCancel)
+        return () => request?.current?.cancel?.(REQUEST_CANCEL)
         // eslint-disable-next-line
     }, [])
 

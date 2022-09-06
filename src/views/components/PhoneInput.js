@@ -1,5 +1,5 @@
 import {useLayoutEffect, useRef, useState} from "react"
-import numberCorrection from "../../helpers/numberCorrection"
+import numberCorrection from "../../seyed-modules/helpers/numberCorrection"
 import verifyCodeConstant from "../../constant/verifyCodeConstant"
 
 function PhoneInput({onChange})

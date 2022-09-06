@@ -1,6 +1,6 @@
-import Switch from "../components/Switch"
+import Switch from "../../seyed-modules/components/Switch"
 import {lazy} from "react"
-import Route from "../components/Route"
+import Route from "../../seyed-modules/components/Route"
 import urlConstant from "../../constant/urlConstant"
 
 const SettingPage = lazy(() => import("../pages/SettingPage"))

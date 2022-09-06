@@ -1,17 +1,18 @@
 import {SET_USER} from "./AuthTypes"
-import request from "../../request/request"
+import request from "../../seyed-modules/request/request"
 import apiUrlsConstant from "../../constant/apiUrlsConstant"
-import sendFile from "../../request/sendFile"
 import cartActions from "../cart/CartActions"
+
+const base = process.env.REACT_APP_REST_URL
 
 const sendOtp = ({mobile, cancel}) =>
 {
-    return request.post({url: apiUrlsConstant.getOtp, data: {phone: mobile}, cancel})
+    return request.post({base, url: apiUrlsConstant.getOtp, data: {phone: mobile}, cancel})
 }
 
 const loginOrSignup = ({mobile, code, dispatch}) =>
 {
-    return request.post({url: apiUrlsConstant.verifyOtp, data: {phone: mobile, code}})
+    return request.post({base, url: apiUrlsConstant.verifyOtp, data: {phone: mobile, code}})
         .then(({data}) =>
         {
             const {is_sign_up} = data
@@ -24,7 +25,7 @@ const editAvatar = ({avatar, dispatch, progress}) =>
 {
     const data = new FormData()
     if (avatar) data.append("avatar", avatar)
-    return sendFile({url: apiUrlsConstant.updateAvatar, data, progress})
+    return request.sendFile({base, url: apiUrlsConstant.updateAvatar, data, progress})
         .then(({data: user}) =>
         {
             setUser({data: {user}, dispatch})
@@ -34,7 +35,7 @@ const editAvatar = ({avatar, dispatch, progress}) =>
 
 const getUser = ({dispatch}) =>
 {
-    request.get({url: apiUrlsConstant.getProfile, dontCache: true, dontToast: true})
+    request.get({base, url: apiUrlsConstant.getProfile, dontCache: true, dontToast: true})
         .then(({data: user}) =>
         {
             setUser({data: {user}, dispatch})
@@ -43,7 +44,7 @@ const getUser = ({dispatch}) =>
 
 const editProfile = ({data, dispatch, cartDispatch}) =>
 {
-    return request.patch({url: apiUrlsConstant.updateProfile, data})
+    return request.patch({base, url: apiUrlsConstant.updateProfile, data})
         .then(({data: user}) =>
         {
             setUser({data: {user}, dispatch})
@@ -53,7 +54,7 @@ const editProfile = ({data, dispatch, cartDispatch}) =>
 
 const getTokenWithRefreshToken = () =>
 {
-    return request.get({url: apiUrlsConstant.refreshToken, dontCache: true, dontToast: true, useRefreshToken: true})
+    return request.get({base, url: apiUrlsConstant.refreshToken, dontCache: true, dontToast: true, useRefreshToken: true})
         .then(res =>
         {
             const {refreshToken, token} = res
@@ -69,7 +70,7 @@ const getTokenWithRefreshToken = () =>
 
 const checkEmail = ({email, cancel}) =>
 {
-    return request.post({url: apiUrlsConstant.checkEmail, data: {email}, cancel})
+    return request.post({base, url: apiUrlsConstant.checkEmail, data: {email}, cancel})
 }
 
 const setUser = ({data, dispatch}) =>
@@ -80,11 +81,6 @@ const setUser = ({data, dispatch}) =>
     })
 }
 
-const logout = () =>
-{
-    return request.post({url: apiUrlsConstant.logout, useRefreshToken: true})
-}
-
 const AuthActions = {
     sendOtp,
     loginOrSignup,
@@ -92,7 +88,6 @@ const AuthActions = {
     checkEmail,
     setUser,
     getTokenWithRefreshToken,
-    logout,
     editProfile,
     editAvatar,
 }

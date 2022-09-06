@@ -1,12 +1,12 @@
-import Material from "./Material"
-import MyLoader from "./MyLoader"
+import Material from "../../seyed-modules/components/Material"
+import MyLoader from "../../seyed-modules/components/MyLoader"
 import compressImage from "../../helpers/compressImage"
 import {useLayoutEffect, useRef, useState} from "react"
 import b64ToFile from "../../helpers/b64ToFile"
-import goBack from "../../helpers/goBack"
+import goBack from "../../seyed-modules/helpers/goBack"
 import VerticalPanel from "./VerticalPanel"
 import RangeSlider from "./RangeSlider"
-import getComputedStyleHelper from "../../helpers/getComputedStyleHelper"
+import getComputedStyleHelper from "../../seyed-modules/helpers/getComputedStyleHelper"
 
 function CropImage({file, onChange, closeCrop})
 {

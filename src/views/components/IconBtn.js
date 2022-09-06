@@ -1,6 +1,6 @@
-import Link from "./Link"
-import Material from "./Material"
-import createMaterialColor from "../../helpers/createMaterialColor"
+import Link from "../../seyed-modules/components/Link"
+import Material from "../../seyed-modules/components/Material"
+import createMaterialColor from "../../seyed-modules/helpers/createMaterialColor"
 
 function IconBtn({title, Icon, leftIcon, iconClassName, className, link, onClick, variable = "--link-color"})
 {

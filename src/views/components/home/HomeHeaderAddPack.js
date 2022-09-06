@@ -1,6 +1,6 @@
 import MaskRound from "../MaskRound"
-import Material from "../Material"
-import PlusSvg from "../../../media/svg/PlusSvg"
+import Material from "../../../seyed-modules/components/Material"
+import PlusSvg from "../../../seyed-modules/media/svg/PlusSvg"
 import {useState} from "react"
 import AddPackModal from "../../containers/home/AddPackModal"
 

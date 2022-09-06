@@ -3,12 +3,12 @@ import PackActions from "../../../context/pack/PackActions"
 import Input from "../../components/Input"
 import {PackContext} from "../../../context/pack/PackReducer"
 import {useContext} from "react"
-import goBack from "../../../helpers/goBack"
-import toastManager from "../../../helpers/toastManager"
-import {SUCCESS_TOAST} from "../../../constant/toastTypes"
+import goBack from "../../../seyed-modules/helpers/goBack"
+import toastManager from "../../../seyed-modules/helpers/toastManager"
+import {SUCCESS_TOAST} from "../../../seyed-modules/constant/toastTypes"
 import textConstant from "../../../constant/textConstant"
 import VerticalPanel from "../../components/VerticalPanel"
-import Button from "../../components/Button"
+import Button from "../../../seyed-modules/components/Button"
 
 function AddPackModal({close})
 {

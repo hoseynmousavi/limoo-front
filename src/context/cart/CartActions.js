@@ -1,10 +1,12 @@
-import request from "../../request/request"
+import request from "../../seyed-modules/request/request"
 import apiUrlsConstant from "../../constant/apiUrlsConstant"
 import {GET_REVIEW_CARTS, REVIEW_CART} from "./CartTypes"
 
+const base = process.env.REACT_APP_REST_URL
+
 function getReviewCarts({dispatch, cancel})
 {
-    request.get({url: apiUrlsConstant.cartReview, cancel})
+    request.get({base, url: apiUrlsConstant.cartReview, cancel})
         .then(({data}) =>
         {
             dispatch({
@@ -16,7 +18,7 @@ function getReviewCarts({dispatch, cancel})
 
 function review({data, dispatch})
 {
-    request.post({url: apiUrlsConstant.cartReview, data})
+    request.post({base, url: apiUrlsConstant.cartReview, data})
         .then(() =>
         {
             dispatch({

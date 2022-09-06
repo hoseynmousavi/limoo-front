@@ -1,9 +1,9 @@
 import {useEffect, useRef, useState} from "react"
 import dateConstant from "../../constant/dateConstant"
-import scrollWithDragDrop from "../../helpers/scrollWithDragDrop"
-import vibrate from "../../helpers/vibrate"
-import checkParentClass from "../../helpers/checkParentClass"
-import createMaterialColor from "../../helpers/createMaterialColor"
+import scrollWithDragDrop from "../../seyed-modules/helpers/scrollWithDragDrop"
+import vibrate from "../../seyed-modules/helpers/vibrate"
+import checkParentClass from "../../seyed-modules/helpers/checkParentClass"
+import createMaterialColor from "../../seyed-modules/helpers/createMaterialColor"
 
 function Scroll({type, selectedMonth, selectedYear, onChange, defaultValue})
 {

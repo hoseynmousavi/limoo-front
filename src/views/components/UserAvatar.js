@@ -1,6 +1,6 @@
 import {useContext} from "react"
 import {AuthContext} from "../../context/auth/AuthReducer"
-import ImageShow from "./ImageShow"
+import ImageShow from "../../seyed-modules/components/ImageShow"
 import UserSvg from "../../media/svg/UserSvg"
 import getImageLink from "../../helpers/getImageLink"
 import MaskRound from "./MaskRound"

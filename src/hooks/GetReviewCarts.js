@@ -1,7 +1,7 @@
 import {useContext, useEffect, useRef} from "react"
-import toastConstant from "../constant/toastConstant"
 import CartActions from "../context/cart/CartActions"
 import {CartContext} from "../context/cart/CartReducer"
+import {REQUEST_CANCEL} from "../seyed-modules/constant/toastTypes"
 
 function GetReviewCarts({doAfterGet} = {})
 {
@@ -18,7 +18,7 @@ function GetReviewCarts({doAfterGet} = {})
     useEffect(() =>
     {
         if (isLoading) CartActions.getReviewCarts({dispatch, cancel: cancelSource => request.current = cancelSource})
-        return () => request?.current?.cancel?.(toastConstant.requestCancel)
+        return () => request?.current?.cancel?.(REQUEST_CANCEL)
         // eslint-disable-next-line
     }, [])
 

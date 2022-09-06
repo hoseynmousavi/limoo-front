@@ -1,0 +1,3 @@
+[submodule "src/seyed-modules"]
+	path = src/seyed-modules
+	url = https://github.com/hoseynmousavi/seyed-modules.git

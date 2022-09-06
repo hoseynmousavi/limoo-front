@@ -1,4 +1,4 @@
-import Material from "../../components/Material"
+import Material from "../../../seyed-modules/components/Material"
 import {useContext, useRef, useState} from "react"
 import cartActions from "../../../context/cart/CartActions"
 import {CartContext} from "../../../context/cart/CartReducer"

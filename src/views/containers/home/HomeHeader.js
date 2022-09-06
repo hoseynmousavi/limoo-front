@@ -1,4 +1,4 @@
-import {dontSwitchGesture} from "../../../hooks/SwitchGesture"
+import {dontSwitchGesture} from "../../../seyed-modules/hooks/SwitchGesture"
 import HomeHeaderAddPack from "../../components/home/HomeHeaderAddPack"
 
 function HomeHeader()

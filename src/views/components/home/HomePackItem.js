@@ -1,11 +1,11 @@
 import SlideEffect from "../SlideEffect"
-import Material from "../Material"
+import Material from "../../../seyed-modules/components/Material"
 import textConstant from "../../../constant/textConstant"
 import PackActions from "../../../context/pack/PackActions"
 import {useContext} from "react"
 import {PackContext} from "../../../context/pack/PackReducer"
-import toastManager from "../../../helpers/toastManager"
-import {INFO_TOAST} from "../../../constant/toastTypes"
+import toastManager from "../../../seyed-modules/helpers/toastManager"
+import {INFO_TOAST} from "../../../seyed-modules/constant/toastTypes"
 
 function HomePackItem({data: {_id, name, carts_count}})
 {

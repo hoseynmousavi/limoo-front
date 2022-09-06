@@ -1,6 +1,6 @@
 import {useRef} from "react"
-import changeBodyOverflow from "../helpers/changeBodyOverflow"
-import {dontSwitchGesture} from "./SwitchGesture"
+import changeBodyOverflow from "../seyed-modules/helpers/changeBodyOverflow"
+import {dontSwitchGesture} from "../seyed-modules/hooks/SwitchGesture"
 
 function SlideEffectGestures({cartHeight})
 {
