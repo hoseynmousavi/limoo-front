@@ -3,6 +3,7 @@ import textConstant from "../../../constant/textConstant"
 import MoonSvg from "../../../media/svg/MoonSvg"
 import GetTheme from "../../../seyed-modules/hooks/GetTheme"
 import {useEffect, useRef} from "react"
+import changeVariablesConstant from "../../../constant/changeVariablesConstant"
 
 function SettingChangeTheme({contRef})
 {
@@ -45,7 +46,7 @@ function SettingChangeTheme({contRef})
 
     function switchTheme()
     {
-        changeTheme({theme: isDark ? "light" : "dark", save: true})
+        changeTheme({theme: isDark ? "light" : "dark", save: true, changeVariables: changeVariablesConstant})
     }
 
     return (
