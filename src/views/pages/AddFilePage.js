@@ -3,11 +3,17 @@ import request from "../../seyed-modules/request/request"
 import apiUrlsConstant from "../../constant/apiUrlsConstant"
 import toastManager from "../../seyed-modules/helpers/toastManager"
 import {FAIL_TOAST, SUCCESS_TOAST} from "../../seyed-modules/constant/toastTypes"
-import {useState} from "react"
+import {useContext, useState} from "react"
+import PackActions from "../../context/pack/PackActions"
+import {PackContext} from "../../context/pack/PackReducer"
+import CartActions from "../../context/cart/CartActions"
+import {CartContext} from "../../context/cart/CartReducer"
 
 function AddFilePage({route: {match: {params: {_id}}}})
 {
     const [loading, setLoading] = useState(false)
+    const {dispatch: packDispatch} = useContext(PackContext)
+    const {dispatch: cartDispatch} = useContext(CartContext)
 
     function onFileChange(e)
     {
@@ -29,6 +35,8 @@ function AddFilePage({route: {match: {params: {_id}}}})
                 {
                     toastManager.addToast({type: SUCCESS_TOAST, message: "افزوده شد"})
                     setLoading(false)
+                    PackActions.getPacks({dispatch: packDispatch})
+                    CartActions.getReviewCarts({dispatch: cartDispatch})
                 })
                 .catch(() =>
                 {
