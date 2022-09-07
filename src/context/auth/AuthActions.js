@@ -2,6 +2,7 @@ import {SET_USER} from "./AuthTypes"
 import request from "../../seyed-modules/request/request"
 import apiUrlsConstant from "../../constant/apiUrlsConstant"
 import cartActions from "../cart/CartActions"
+import cookieHelper from "../../seyed-modules/helpers/cookieHelper"
 
 const base = process.env.REACT_APP_REST_URL
 
@@ -35,7 +36,7 @@ const editAvatar = ({avatar, dispatch, progress}) =>
 
 const getUser = ({dispatch}) =>
 {
-    request.get({base, url: apiUrlsConstant.getProfile, dontCache: true, dontToast: true})
+    return request.get({base, url: apiUrlsConstant.getProfile, dontCache: true, dontToast: true})
         .then(({data: user}) =>
         {
             setUser({data: {user}, dispatch})
@@ -58,8 +59,8 @@ const getTokenWithRefreshToken = () =>
         .then(res =>
         {
             const {refreshToken, token} = res
-            localStorage.setItem("token", token)
-            localStorage.setItem("refreshToken", refreshToken)
+            cookieHelper.setItem("token", token)
+            cookieHelper.setItem("refreshToken", refreshToken)
             return true
         })
         .catch(() =>

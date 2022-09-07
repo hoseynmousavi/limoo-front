@@ -1,7 +1,9 @@
-import {createContext, useEffect, useReducer} from "react"
+import {createContext, useEffect, useReducer, useState} from "react"
 import {LOGOUT, SET_USER} from "./AuthTypes"
 import AuthActions from "./AuthActions"
 import logoutManager from "../../seyed-modules/helpers/logoutManager"
+import cookieHelper from "../../seyed-modules/helpers/cookieHelper"
+import LoadingWrapper from "../../seyed-modules/components/LoadingWrapper"
 
 export const AuthContext = createContext(null)
 
@@ -38,11 +40,11 @@ function saveUserToDisk(data)
     {
         if (data.token)
         {
-            localStorage.setItem("token", data.token)
+            cookieHelper.setItem("token", data.token)
         }
         if (data.refresh_token)
         {
-            localStorage.setItem("refreshToken", data.refresh_token)
+            cookieHelper.setItem("refreshToken", data.refresh_token)
         }
         if (data.user)
         {
@@ -51,32 +53,40 @@ function saveUserToDisk(data)
     }
     else
     {
-        const theme = localStorage.getItem("theme")
+        cookieHelper.removeItem("token")
+        cookieHelper.removeItem("refreshToken")
         localStorage.clear()
-        if (theme) localStorage.setItem("theme", theme)
     }
 }
 
 function AuthProvider({children})
 {
+    const [isLogging, setIsLogging] = useState(false)
     const [state, dispatch] = useReducer(reducer, initialState, init)
 
     useEffect(() =>
     {
-        const user = localStorage.getItem("user")
-        const token = localStorage.getItem("token")
-        const refreshToken = localStorage.getItem("refreshToken")
-        if (user && token && refreshToken)
+        const token = cookieHelper.getItem("token")
+        const refreshToken = cookieHelper.getItem("refreshToken")
+        if (token && refreshToken)
         {
-            try
+            const user = localStorage.getItem("user")
+            if (user)
             {
-                AuthActions.setUser({data: {user: JSON.parse(user)}, dispatch})
+                try
+                {
+                    AuthActions.setUser({data: {user: JSON.parse(user)}, dispatch})
+                }
+                catch (e)
+                {
+                    console.log("err parsing user:", e.message)
+                }
             }
-            catch (e)
-            {
-                console.log("err parsing user:", e.message)
-            }
+            else setIsLogging(true)
+
             AuthActions.getUser({dispatch})
+                .then(() => setIsLogging(false))
+                .catch(() => setIsLogging(false))
         }
 
         logoutManager.setLogOut({callBack: () => dispatch({type: LOGOUT})})
@@ -84,7 +94,12 @@ function AuthProvider({children})
 
     return (
         <AuthContext.Provider value={{state, dispatch}}>
-            {children}
+            {
+                isLogging ?
+                    <LoadingWrapper haveBg/>
+                    :
+                    children
+            }
         </AuthContext.Provider>
     )
 }
