@@ -8,6 +8,9 @@ import AuthProvider from "./context/auth/AuthReducer"
 import PackProvider from "./context/pack/PackReducer"
 import CartProvider from "./context/cart/CartReducer"
 import changeVariablesConstant from "./constant/changeVariablesConstant"
+import request from "./seyed-modules/request/request"
+import AuthActions from "./context/auth/AuthActions"
+import offlineSending from "./constant/offlineSending"
 
 const root = createRoot(document.getElementById("root"))
 
@@ -24,5 +27,10 @@ root.render(
         </AuthProvider>
     </ThemeProvider>,
 )
+
+request.init({
+    refreshFunc: AuthActions.getTokenWithRefreshToken,
+    offlineSendingArr: offlineSending,
+})
 
 registerSW()
