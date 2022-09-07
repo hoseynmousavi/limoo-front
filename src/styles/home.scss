@@ -4,6 +4,21 @@
   padding: 0 var(--mobile-first-solid-padding) calc(var(--nav-height) + min(env(safe-area-inset-bottom), 12px)) var(--mobile-first-solid-padding);
 }
 
+.add-file {
+  min-height: var(--full-height);
+  background-color: var(--second-background-color);
+  padding: var(--mobile-first-solid-padding);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-file-text {
+  background-color: var(--first-background-color);
+  padding: var(--mobile-first-solid-padding) calc(2 * var(--mobile-first-solid-padding));
+  border-radius: var(--second-radius);
+}
+
 .home-navbar {
   touch-action: none;
   position: fixed;

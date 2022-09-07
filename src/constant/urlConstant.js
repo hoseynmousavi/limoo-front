@@ -4,6 +4,8 @@ const urlConstant = {
     login: "/login",
     loginVerifyCode: parameter => `/login/enter-code/${parameter}`,
 
+    addFile: packId => `/pack/${packId}`,
+
     showProfile: "/profile",
     editInformation: "/edit",
     setting: `/setting`,

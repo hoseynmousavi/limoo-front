@@ -6,6 +6,8 @@ import {useContext} from "react"
 import {PackContext} from "../../../context/pack/PackReducer"
 import toastManager from "../../../seyed-modules/helpers/toastManager"
 import {INFO_TOAST} from "../../../seyed-modules/constant/toastTypes"
+import Link from "../../../seyed-modules/components/Link"
+import urlConstant from "../../../constant/urlConstant"
 
 function HomePackItem({data: {_id, name, carts_count}})
 {
@@ -22,17 +24,19 @@ function HomePackItem({data: {_id, name, carts_count}})
 
     return (
         <SlideEffect className="home-pack-item" onRemove={remove}>
-            <Material className="home-pack-item-content">
-                <div className="home-pack-item-title">{name}</div>
-                <div className="home-pack-item-count">
-                    {
-                        carts_count > 0 ?
-                            textConstant.haveCart(carts_count)
-                            :
-                            textConstant.noCart
-                    }
-                </div>
-            </Material>
+            <Link to={urlConstant.addFile(_id)}>
+                <Material className="home-pack-item-content">
+                    <div className="home-pack-item-title">{name}</div>
+                    <div className="home-pack-item-count">
+                        {
+                            carts_count > 0 ?
+                                textConstant.haveCart(carts_count)
+                                :
+                                textConstant.noCart
+                        }
+                    </div>
+                </Material>
+            </Link>
         </SlideEffect>
     )
 }
