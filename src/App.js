@@ -15,7 +15,7 @@ function App()
     return (
         <div id="index-temp" className="index-temp">
             <ThemeColorBar/>
-            <Switch isAuth>
+            <Switch>
                 <PrivateRoute user={user} redirectUrl={urlConstant.home} path={urlConstant.login} render={() => <Login/>} ifNotLogin dontChange/>
                 <PrivateRoute user={user} redirectUrl={urlConstant.login} path="*" render={() => <Home/>}/>
             </Switch>
