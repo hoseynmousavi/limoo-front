@@ -1,5 +1,23 @@
 @import "../seyed-modules/styles/index";
 
+@font-face {
+  font-family: "my-font";
+  src: url("../media/fonts/dana-fanum-regular.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "my-font-demibold";
+  src: url("../media/fonts/dana-fanum-demibold.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "my-font-bold";
+  src: url("../media/fonts/dana-fanum-bold.woff2") format("woff2");
+  font-display: swap;
+}
+
 @import "animations";
 @import "user-avatar";
 @import "slide-effect";

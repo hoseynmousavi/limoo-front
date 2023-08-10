@@ -34,6 +34,7 @@ sed -i "s~TRANSITION_METHOD~$REACT_APP_TRANSITION_METHOD~g" build/index.html
 sed -i "s~FIRST_TRANSITION~$REACT_APP_FIRST_TRANSITION~g" build/index.html
 sed -i "s~LINK_COLOR~$REACT_APP_LINK_COLOR~g" build/index.html
 sed -i "s~ICON_COLOR~$REACT_APP_ICON_COLOR~g" build/index.html
+sed -i "s~PAGE_COLOR~$REACT_APP_PAGE_COLOR~g" build/index.html
 sed -i "s~FIRST_BACKGROUND_COLOR~$REACT_APP_FIRST_BACKGROUND_COLOR~g" build/index.html
 sed -i "s~SECOND_BACKGROUND_COLOR~$REACT_APP_SECOND_BACKGROUND_COLOR~g" build/index.html
 sed -i "s~FIRST_MODAL_BACKGROUND_COLOR~$REACT_APP_FIRST_MODAL_BACKGROUND_COLOR~g" build/index.html
