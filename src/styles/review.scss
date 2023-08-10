@@ -69,6 +69,23 @@
   text-align: center;
 }
 
+.review-cart-material-icon {
+  margin-top: 16px;
+  width: 80px;
+  height: 48px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: var(--third-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.review-cart-material-icon-inner {
+  width: 32px;
+  height: 32px;
+  fill: var(--first-text-color);
+}
+
 .review-cart-material-desc {
   font-size: var(--title-font);
   padding: 0 var(--mobile-first-solid-padding);

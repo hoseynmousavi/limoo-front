@@ -1,7 +1,4 @@
 #!/bin/bash
-rm build/*.js.map
-rm build/static/js/*.map
-rm build/static/css/*.map
 source .env
 source .env.local
 sed -i "s~NAME~$REACT_APP_NAME~g" build/manifest.json
